@@ -149,8 +149,10 @@ void RefreshRainmeter(DesktopOrientation orientation) {
     ReadSettings(newID, "settings", newSettings);
     ReadSettings(newID, "overlay", newOverlay);
 
-    int rs = CopyFile(newSettings, settings, FALSE);
-    int ro = CopyFile(newOverlay,  overlay,  FALSE);
+    if (path) {
+        int rs = CopyFile(newSettings, settings, FALSE);
+        int ro = CopyFile(newOverlay, overlay, FALSE);
 
-    ShellExecute(NULL, NULL, path, "!RefreshApp", NULL, SW_HIDE);
+        ShellExecute(NULL, NULL, path, "!RefreshApp", NULL, SW_HIDE);
+    }
 }
