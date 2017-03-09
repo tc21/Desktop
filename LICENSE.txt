@@ -1,5 +1,7 @@
 MIT License
 
+Desktop
+
 Copyright (c) 2017 Tiger Cao
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

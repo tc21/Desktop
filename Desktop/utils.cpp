@@ -15,11 +15,13 @@ char * ReadSettings(char *section, char *key, char *copy) {
             while (find('\n', settingsFile)) {
                 if (strcmp(key, get('=', settingsFile, content)) == 0) {
                     strcpy_s(copy, MAX_PATH, get('\n', settingsFile, content));
+                    fclose(settingsFile);
                     return copy;
                 }
             }
         }
     }
+    fclose(settingsFile);
     return NULL;
 }
 

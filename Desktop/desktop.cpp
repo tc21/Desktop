@@ -143,6 +143,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             //Note: perhaps if it doesn't exist we could create a template
             ShellExecute(NULL, NULL, SETTINGS_FILE, NULL, NULL, SW_HIDE);
             break;
+        case ID_RELOAD:
+            RegisterDesktopChange();
+            break;
         case ID_EXIT:
             DestroyWindow(hwnd);
         }
